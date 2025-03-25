@@ -8,7 +8,7 @@ class Doctor(models.Model):
     special = models.CharField(max_length=50)
 
     def __str__(self):
-       return self.name;
+       return self.name
 
 class Patient(models.Model):
     name = models.CharField(max_length=50)
@@ -17,7 +17,7 @@ class Patient(models.Model):
     address = models.CharField(max_length=50)
 
     def __str__(self):
-       return self.name;
+       return self.name
 
 class Appointment(models.Model):
     doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
@@ -26,7 +26,7 @@ class Appointment(models.Model):
     time1 = models.TimeField()
 
     def __str__(self):
-       return self.doctorname+"--"+self.patient.name;
+       return self.doctorname+"--"+self.patient.name
 
 class Contact(models.Model):
     name = models.CharField(max_length=100, null=True)
